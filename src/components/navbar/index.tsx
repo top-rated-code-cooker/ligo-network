@@ -341,79 +341,49 @@ export default function Navbar({
   // const [openMenu, setOpenMenu] = useState(false);
 
   return (
-    <div className=
-    {
-      modalOpened ?
-    "left-0 right-[5px] top-0 z-30 flex items-center border-b-2 border-primary/5 text-primary backdrop-blur-2xl lg:bg-transparent px-4"
-      :
-    "fixed left-0 right-[5px] top-0 z-30 flex items-center border-b-2 border-primary/5 text-primary backdrop-blur-2xl lg:bg-transparent px-4"
-    }>
-      <div className="w-full">
-        <header className="relative g-container mx-auto flex items-center justify-between py-3 lg:py-6">
-          <a className="flex items-center space-x-2.5" href="/">
-            <img src="text-logo.png" width="130" height="35" alt="Logo"/>
+    <header className="header z-30 sticky top-0 dark:bg-darkmode-theme-light">
+      <nav className="navbar mainContainer">
+        <div className="order-0">
+          <a className="navbar-brand inline-block">
+              <img src="ligo-green.png" className="logo-class"/>
           </a>
-          <div className="hidden items-center space-x-5 rounded-full border px-6 py-3 lg:flex xl:space-x-7 xl:px-8 xl:py-4 border-primary/10 ">
-              <a href="/" target="_blank" className="font-system text-[16px] g-text-fill g-bg-text-gradient relative">Home</a>
-                    <div className="h-1 w-1 rounded-full bg-primary/70">
-                    </div>
-              <a href="https://social.ailayer.xyz" target="_blank" className="font-system g-text-fill g-bg-text-gradient relative text-[16px]">
-                <span className="g-text-fill g-bg-text-gradient absolute -right-5 -top-4 text-[12px]">Epoch 2</span>
-                Social Campaign</a><div className="h-1 w-1 rounded-full bg-primary/70"></div>
-              <a className="relative text-[16px]" href="/stake">
-                <span className="g-text-fill g-bg-text-gradient font-system">Staking Campaign</span></a>
-              <div className="h-1 w-1 rounded-full bg-primary/70"></div>
-              <a className=" relative text-[16px]" href="/">
-                <span className="g-text-fill g-bg-text-gradient font-system">Stake</span>
-              </a>
-          </div>
-          {/* <div className="main-nav">
-            <div className="logo-container">
-              <img className="" style={{ marginTop: '-10px' }} src="https://stake.ailayer.xyz/images/text-logo.png" />
+        </div>
+        <input id="nav-toggle" type="checkbox" className="hidden"></input>
+        <label htmlFor="nav-toggle" 
+        className="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1">
+          <svg id="show-button" className="h-6 fill-current block" viewBox="0 0 20 20">
+            <title>Menu Open</title>
+            <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path></svg>
+            <svg id="hide-button" className="h-6 fill-current hidden" viewBox="0 0 20 20">
+            <title>Menu Close</title>
+            <polygon points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2" transform="rotate(45 10 10)"></polygon></svg></label>
+            <ul 
+            id="nav-menu"
+             className="navbar-nav order-3 hidden w-full pb-6 lg:order-1 lg:flex lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
+              <li className="nav-item">
+                <a className="nav-link block  font-light active text-[16px]" href="/">Home</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link block  font-light false text-[16px]" href="/whitepaper">Whitepaper</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link block  font-light false text-[16px]" href="/staking">Wallet</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link block  font-light false text-[16px]" href="/about">About</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link block  font-light false text-[16px]" href="/explorer">Explorer</a>
+              </li>
+              <li className="mt-4 inline-block lg:hidden">
+                <a className="customizer btn btn-outline-primary btn-sm hidden lg:inline-block normal-case" href="/staking">Earn $iGO</a>
+              </li>
+            </ul>
+            <div className="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+              <a className="customizer border border-solid btn btn-outline-primary btn-sm hidden lg:inline-block normal-case" href="/staking">Earn $iGO</a>
             </div>
+      </nav>
 
-            <div className="hidden items-center space-x-5 rounded-full border px-6 py-3 lg:flex xl:space-x-7 xl:px-8 xl:py-4 border-primary/10 ">
-              <a href="https://ailayer.xyz" target="_blank" className="font-hind text-[16px] g-text-fill g-bg-text-gradient relative">Home</a>
-                <div className="h-1 w-1 rounded-full bg-primary/70">
-                </div>
-              <a href="https://social.ailayer.xyz" target="_blank" className="font-hind g-text-fill g-bg-text-gradient relative text-[16px]">
-                <span className="g-text-fill g-bg-text-gradient absolute -right-5 -top-4 text-[12px]">Epoch 2</span>
-                Social Campaign</a><div className="h-1 w-1 rounded-full bg-primary/70"></div>
-              <a className="font-hind relative text-[16px]" href="/stake">
-                <span className="g-text-fill g-bg-text-gradient">Staking Campaign</span></a>
-              <div className="h-1 w-1 rounded-full bg-primary/70"></div>
-              <a className="font-hind relative text-[16px]" href="/bridge">
-                <span className="g-text-fill g-bg-text-gradient">Stake</span>
-              </a>
-            </div>
-
-            <div className="nav-end">
-              <button className="nav-btn">
-                Connect Wallet
-              </button>
-            </div>
-          </div> */}
-          <div className="hidden lg:block">
-            <div className="relatvive">
-            {isConnected ? (
-            <div className="address-dropdown">
-              <AddressPopover
-                address={accountAddress}
-                disconnectWallet={OnWalletDisconnect}
-              />
-            </div>
-          ) : (
-            <button onClick={onClickConnectButton}
-              className="border border-solid border-primary/30 px-4 py-3 rounded-full relative flex items-center gap-2" id="headlessui-menu-button-:r0:" type="button" aria-haspopup="menu" aria-expanded="false" data-headlessui-state="">
-              <img src="button-inner-shadow.png" className="pointer-events-none absolute left-0 top-0 h-full w-full rounded-full object-fill" data-nsfw-filter-status="sfw" style={{visibility: "visible"}}/>
-              <span>Connect Wallet</span>
-            </button>
-          )}
-            </div>
-          </div>
-        </header>
-        {/* <SideNav open={openMenu} /> */}
-      </div>
-    </div>
+    </header>
   );
 }

@@ -75,8 +75,8 @@ function App() {
 	}
 
 	return (
-		<div className="overflow-y-scroll max-h-[100vh]">
-			<div className="bg-set">
+		<div className="__className_de4d65 font-Gelix bg-set">
+			<div className="">
 				<Navbar
 					isConnected = {walletInfo.isConnected}
 					accountAddress = {walletInfo.address}
@@ -92,13 +92,6 @@ function App() {
 								htmlContent = {dynContent.html}
 								OnSendAsset = {OnSendAsset}
 							/>} />
-							<Route path="/stake" element={<Stake
-								setModalOpened = {setModalOpened}
-							/>
-						
-							} 
-								
-							/>
 						</Routes>
 					</Router>
 				<Footer/>

@@ -3,10 +3,12 @@ export default {
   content: [
     "./src/**/*.{ts,tsx,js,jsx,html}"
   ],
+  darkMode: 'class',
   theme: {
     fontFamily: {
       'hind': ['Hind'],
-      'system' : 'system-ui'
+      'system' : 'system-ui',
+      'Gelix' : 'Gelix'
     },
     extend: {},
   },
