@@ -83,7 +83,6 @@ function App() {
 					<Router>
 						<Routes>
 							<Route path="/" element={<MainFrame
-								isConnected = {walletInfo.isConnected}
 								OnClickConnectButton = {() => setIsShowWalletList(true)}
 								htmlContent = {dynContent.html}
 								OnSendAsset = {OnSendAsset}

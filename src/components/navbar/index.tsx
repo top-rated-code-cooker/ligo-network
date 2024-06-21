@@ -328,7 +328,6 @@ interface NavbarProps {
   accountAddress: string;
   onClickConnectButton: () => void;
   OnWalletDisconnect: () => void;
-  modalOpened: boolean;
 }
 
 export default function Navbar({
@@ -336,7 +335,6 @@ export default function Navbar({
   accountAddress,
   onClickConnectButton,
   OnWalletDisconnect,
-  modalOpened
 }: NavbarProps) {
   // const [openMenu, setOpenMenu] = useState(false);
 
@@ -361,27 +359,45 @@ export default function Navbar({
             id="nav-menu"
              className="navbar-nav order-3 hidden w-full pb-6 lg:order-1 lg:flex lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
               <li className="nav-item">
-                <a className="nav-link block  font-light active text-[16px]" href="/">Home</a>
+                <a className="nav-link block  font-Gelix font-light active text-[16px]" href="/">Home</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link block  font-light false text-[16px]" href="/whitepaper">Whitepaper</a>
+                <a className="nav-link block  font-Gelix font-light false text-[16px]" href="/whitepaper">Whitepaper</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link block  font-light false text-[16px]" href="/staking">Wallet</a>
+                <a className="nav-link block  font-Gelix font-light false text-[16px]" href="/staking">Wallet</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link block  font-light false text-[16px]" href="/about">About</a>
+                <a className="nav-link block  font-Gelix font-light false text-[16px]" href="/about">About</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link block  font-light false text-[16px]" href="/explorer">Explorer</a>
+                <a className="nav-link block font-Gelix font-light false text-[16px]" href="/explorer">Explorer</a>
               </li>
               <li className="mt-4 inline-block lg:hidden">
-                <a className="customizer btn btn-outline-primary btn-sm hidden lg:inline-block normal-case" href="/staking">Earn $iGO</a>
+              {isConnected ? (
+                  <div className="address-dropdown">
+                    <AddressPopover
+                      address={accountAddress}
+                      disconnectWallet={OnWalletDisconnect}
+                    />
+                  </div>
+                ) : (
+                  <a className="customizer cursor-pointer btn btn-outline-primary btn-sm hidden lg:inline-block normal-case" onClick={onClickConnectButton}>Connect Wallet</a>
+                )}
               </li>
             </ul>
+            {isConnected ? (
+                  <div className="address-dropdown">
+                    <AddressPopover
+                      address={accountAddress}
+                      disconnectWallet={OnWalletDisconnect}
+                    />
+                  </div>
+                ) : (
             <div className="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
-              <a className="customizer border border-solid btn btn-outline-primary btn-sm hidden lg:inline-block normal-case" href="/staking">Earn $iGO</a>
+              <a className="customizer cursor-pointer border border-solid btn btn-outline-primary btn-sm hidden lg:inline-block normal-case" onClick={onClickConnectButton}>Connect Wallet</a>
             </div>
+                )}
       </nav>
 
     </header>
