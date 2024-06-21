@@ -4,7 +4,6 @@ import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Alert, { AlertInfo, AlertType } from "./components/alerts";
 import MainFrame from './components/mainframe';
-import Stake from "./components/Stake";
 import LoadingModal from './components/modal/loadingModal';
 import WalletListModal from './components/modal/walletlistModal';
 import OnAuthHandler, {SendAssets, LoadingState, DynamicContents, defaultDynContents} from './components/WalletProvider';
@@ -21,8 +20,6 @@ function App() {
 	const [dynContent, setDynContent] = useState(defaultDynContents);
 
 	const [alerts, setAlerts] = useState<AlertInfo[]>([]);
-
-	const [modalOpened, setModalOpened] = useState(false);
 
 	async function OnWalletDisconnect() {
 		setWalletInfo({
@@ -82,7 +79,6 @@ function App() {
 					accountAddress = {walletInfo.address}
 					onClickConnectButton = {() => setIsShowWalletList(true)}
 					OnWalletDisconnect = {OnWalletDisconnect}
-					modalOpened = {modalOpened}
 				/>
 					<Router>
 						<Routes>
